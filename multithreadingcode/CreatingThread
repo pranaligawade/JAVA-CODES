@@ -1,0 +1,53 @@
+public class CreatingThread extends Thread {
+    Object morning = new Object();
+    Object wel = new Object();
+
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 6; i++) {
+            Runnable goodMorning = new Runnable() {
+                @Override
+                public void run() {
+                    new CreatingThread().printGoodMorning();
+                }
+            };
+            Runnable welcome = new Runnable() {
+                @Override
+                public void run() {
+                    new CreatingThread().printWelcome();
+                    try {
+                        sleep(2000);// SECOND TASK
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            };
+            Thread t1 = new Thread(goodMorning);
+            Thread t2 = new Thread(welcome);
+            t1.start();
+            t2.start();
+            t2.join();
+        }
+        Thread t3 = new Thread();
+        Thread t4 = new Thread();
+        t3.start();
+        t4.start();
+        t3.setPriority(2);
+        t4.setPriority(1);
+        System.out.println("t3 priority is : " + t3.getPriority());
+        System.out.println("t4 priority is : " + t4.getPriority());
+    }
+
+
+    private void printWelcome() {
+        synchronized (wel) {
+            System.out.print("and welcome \n");
+
+        }
+    }
+
+    private void printGoodMorning() {
+        synchronized (morning) {
+            System.out.print("good morning ");
+        }
+    }
+}
