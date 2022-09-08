@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+    <!-- <bean/> definitions here -->
+  <bean class="spring.Collections.Emp" name="emp1">
+      <property name="name" value="paranli"></property>
+   <property name="phone" >
+       <list>
+         <value>4569876548</value>
+           <value>2345678098</value>
+           <null/>
+       </list>
+
+   </property>
+      <property name="address">
+          <set>
+              <value>ahmednager</value>
+          <value>nagpur</value>
+          </set>
+      </property>
+      <property name="course">
+          <map>
+            <entry key="python" value="1motnh"></entry>
+              <entry key="java" value="2month"></entry>
+          </map>
+      </property>
+
+      <property name="props">
+          <props>
+              <prop key="name">jiya</prop>
+              <prop key="surname">gawade</prop>
+          </props>
+      </property>
+  </bean>
+
+</beans>

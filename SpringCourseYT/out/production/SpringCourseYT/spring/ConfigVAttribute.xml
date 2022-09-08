@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+    <!-- <bean/> definitions here  : value as  attribute-->
+    <bean class="spring.Student" name="stud">
+        <property name="studId" value="122534"/>
+        <property name="name" value="anand "/>
+
+        <property name="studAddress"  value="nagpur"/>
+
+    </bean>
+    <!-- second bean  object -->
+    <bean class="spring.Student" name="stud2">
+        <property name="studId" value="12534"/>
+        <property name="name" value="pranali"/>
+        <property name="studAddress"  value="daily"/>
+    </bean>
+
+    <bean class="spring.Student" name="stud3">
+        <property name="studId" value="1253466"/>
+        <property name="name" value="pranali jiya"/>
+        <property name="studAddress"  value="amaravti"/>
+    </bean>
+
+</beans>
