@@ -1,0 +1,10 @@
+json - javaScript object notation.
+language independant
+json supports the array, object, string , number. 
+for  json object to js object-> json.parse(json String name)
+for  js object to json object-> json.stringfy(object name)
+  [] -> json array
+  {} -> json object
+  json java lib:-> 1. gson 2. jackson
+    
+  
